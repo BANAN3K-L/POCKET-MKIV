@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWA Test App</title>
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .page { display: none; }
+    .active { display: block; }
+    button { padding: 10px 15px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div id="page1" class="page active">
+    <h2>Stránka 1</h2>
+    <input id="inputValue" placeholder="Přidej hodnotu" />
+    <button onclick="addValue()">Přidat hodnotu</button>
+    <p id="message"></p>
+    <button onclick="switchPage(2)">Přepnout na stránku 2</button>
+  </div>
+
+  <div id="page2" class="page">
+    <h2>Stránka 2</h2>
+    <p>Uložená hodnota:</p>
+    <p id="savedValue"></p>
+    <button onclick="switchPage(1)">Zpět na stránku 1</button>
+  </div>
+
+  <script>
+    function switchPage(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + page).classList.add('active');
+
+      if (page === 2) {
+        const value = localStorage.getItem('testValue') || 'Žádná hodnota';
+        document.getElementById('savedValue').textContent = value;
+      }
+    }
+
+    function addValue() {
+      const val = document.getElementById('inputValue').value;
+      if (!val) return;
+      localStorage.setItem('testValue', val);
+      document.getElementById('message').textContent = 'Hodnota byla přidána!';
+      document.getElementById('inputValue').value = '';
+    }
+
+    // PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
