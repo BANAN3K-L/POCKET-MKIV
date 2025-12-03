@@ -10,7 +10,7 @@ body{
 header{
     background-color: #645593;
     color: white;
-    font-family: inter;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 10px;
     text-align: center;
@@ -55,4 +55,5 @@ body{
 }
 #active_selection{
     background-color: #645593;
+
 }
