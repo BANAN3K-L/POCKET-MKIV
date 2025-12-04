@@ -1,0 +1,31 @@
+.index-body{
+    margin-top: 230px;
+}
+
+.body-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid #484848;
+    /* background-color: red; */
+}
+
+.body-content h3{
+    color: #9478E8;
+    padding: 0px;
+    margin: 0px;
+}
+.body-content p{
+    color: #979797;
+    margin: 4px 0;
+}
+#next-change{
+    color: white;
+}
+
+.body-content button{
+    font-size:large;
+    width: 100px;
+    background-color: transparent;
+    border: none;
+}

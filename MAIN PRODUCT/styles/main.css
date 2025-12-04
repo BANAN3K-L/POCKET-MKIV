@@ -1,22 +1,33 @@
 html{
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: hidden;
 }
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
 }
 
 header{
-    background-color: #645593;
-    color: white;
-    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: rgb(100, 85, 147);
     margin: 0;
     padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 4px 6px rgba(100, 85, 147, 0.233);
+    margin-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 200px;
     
 }
 header h1{
@@ -46,14 +57,50 @@ body{
     
     
 }
+@keyframes zblunk {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
 
+.selection div:hover{
+    animation: zblunk .2s ease-in-out;
+    /* box-shadow: 0 0 20px rgba(100, 85, 147, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.2); */
+    cursor: pointer;
+    transform: scale(1.04);
+    background-color: #64559356;
+}
+#active_selection:hover{
+    transform: scale(1.0);
+    animation: none;
+}
 .selection div{
     border-radius: 15px;
     background-color: none;
     padding: 5px 20px;
-    
+    transition: all 0.3s ease;
 }
 #active_selection{
     background-color: #645593;
+}
+#version{
+    font-size: x-small;
+}
 
+.header-to-body1{
+    background-color: #645593;
+    width: 100%;
+    height: 20px;
+}
+.header-to-body2{
+    background-color: #353535;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 100px;
 }
