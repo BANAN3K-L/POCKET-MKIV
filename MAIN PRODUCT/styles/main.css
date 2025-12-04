@@ -17,7 +17,6 @@ body{
 header{
     background-color: rgb(100, 85, 147);
     margin: 0;
-    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -104,3 +103,4 @@ body{
     height: 100%;
     border-top-right-radius: 100px;
 }
+
