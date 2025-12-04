@@ -5,7 +5,7 @@
 .body-content{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
     border-bottom: 2px solid #484848;
     /* background-color: red; */
 }
@@ -29,3 +29,4 @@
     background-color: transparent;
     border: none;
 }
+
